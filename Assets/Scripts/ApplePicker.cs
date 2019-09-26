@@ -41,5 +41,11 @@ public class ApplePicker : MonoBehaviour
         //Remove the Basket from the List and destroy the GameObject
         basketList.RemoveAt(basketIndex);
         Destroy(tBasketGO);
+
+        //Restart the game, which doesnt affect HIghscore.Score
+        if( basketList.Count == 0)
+        {
+            Application.LoadLevel("_Scene_0");
+        }
     }
 }
